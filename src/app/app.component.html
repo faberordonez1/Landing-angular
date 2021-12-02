@@ -3,8 +3,11 @@
 <div class="hero">
     <div class="container">
         <section class="hero_articulos">
-            <h2 class="subheader">Ultimos articulos</h2>
+            <router-outlet></router-outlet><!--componentes dinamicos-->
+
             <!-- Listado articulos -->
+            <!-- 
+                <h2 class="subheader">Ultimos articulos</h2>
                 <article class="article_item">
                     <div class="article_imageWrap">
                         <img src="https://loremflickr.com/1000/600/" alt="" srcset="">
@@ -16,8 +19,8 @@
                         </span>
                         <a href="#">Ver Mas...</a>
                     </div>
-                </article>
-        </section>
+                </article>-->
+        </section>  
         <!-- Sidebar -->
         <app-sidebar></app-sidebar>
     </div>      
