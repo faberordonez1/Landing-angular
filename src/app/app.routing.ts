@@ -13,10 +13,12 @@ import { ErrorComponent } from "./components/error/error.component";
 //Array de rutas
 const appRoutes : Routes =[
     {path:'',component:HomeComponent},
+    {path:'home',component:HomeComponent},
     {path:'blog', component:BlogComponent},
     {path:'formulario',component:FormularioComponent},
     {path:'pelicula', component:PeliculaComponent},
-    {path:'pagina-de-pruebas', component:PaginaComponent},
+    {path:'pagina-de-prueba', component:PaginaComponent},//para parametros opcionales
+    {path:'pagina-de-prueba/:nombre/:apellido', component:PaginaComponent},//pasando parametro
     {path:'**',component:ErrorComponent}
 ];
 

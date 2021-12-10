@@ -1,1 +1,8 @@
-<p>pagina works!</p>
+<h1 class="subheader">Página</h1>
+<div *ngIf="nombre && apellido">
+    <h2>Hola soy {{nombre}} y</h2>
+    <h2>mi apellido es {{apellido}}</h2>
+</div>
+<div *ngIf="!nombre || !apellido">
+    <h2>No hay datos para mostrar</h2>
+</div>

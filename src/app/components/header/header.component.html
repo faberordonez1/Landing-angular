@@ -1,17 +1,17 @@
 <header class="header">
     <div class="container">
-        <a href="index.html">
+        <a [routerLink]="['/home']" [routerLinkActive]="['active']">
             <div class="header_logo">
                 <img src="assets/images/angular.svg" alt="logo">
                 <span>Landing<strong>Angular</strong>  </span>
             </div>
         </a>            <nav class="header_navbar">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="article.html">Blog</a></li>
-                <li><a href="formulario.html">Formulario</a></li>
-                <li><a href="../React/index.html">React</a></li>
-                <li><a href="../Vue/index.html">Vue</a></li>
+                <li><a [routerLink]="['/home']" [routerLinkActive]="['active']">Inicio</a></li>
+                <li><a [routerLink]="['/blog']" [routerLinkActive]="['active']">Blog</a></li>
+                <li><a [routerLink]="['/formulario']" [routerLinkActive]="['active']">Formulario</a></li>
+                <li><a [routerLink]="['/pelicula']" [routerLinkActive]="['active']">Pelicula</a></li>
+                <li><a [routerLink]="['/pagina-de-prueba']" [routerLinkActive]="['active']">Pagina</a></li>
             </ul>
         </nav>
     </div>
