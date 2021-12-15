@@ -1,1 +1,23 @@
-<h1 class="subheader">Pelicula</h1>
+<h1 class="subheader">Peliculas</h1>
+<hr>
+<h2>{{titulo}}</h2>
+
+<section class="hero_articulos" *ngIf="peliculas">
+    <!-- Listado articulos -->
+        <article class="article_item" *ngFor="let pelicula of peliculas; let i = index;">
+            <div class="article_imageWrap">
+                <img src="{{pelicula.imagen}}" alt="{{pelicula.title}}" srcset="">
+            </div>
+            <div class="article_item_description">
+                <h2>{{i+1}}.{{pelicula.title}}</h2>
+                <span class="article_date">
+                    Hace 5 minutos
+                </span>
+                <a href="#">Ver Mas...</a>
+            </div>
+        </article>
+</section>
+
+<div *ngIf= "peliculas.length <= 3">
+    <p>Hay pocas peliculas, solo tenemos {{peliculas.length}}</p>
+</div>

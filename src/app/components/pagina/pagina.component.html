@@ -4,5 +4,6 @@
     <h2>mi apellido es {{apellido}}</h2>
 </div>
 <div *ngIf="!nombre || !apellido">
-    <h2>No hay datos para mostrar</h2>
+    <h2>No hay datos por URL para mostrar</h2>
 </div>
+ <button (click)="redireccion()">Llevame al formulario</button>

@@ -12,11 +12,11 @@ export class PaginaComponent implements OnInit {
  public apellido:string;
 
   constructor(
-    private _route:ActivatedRoute,
-    private _router: Router
+    private _route:ActivatedRoute,//parametros
+    private _router:Router//redirecciones
   ) { 
-    this.nombre ="";
-    this.apellido ="";
+      this.nombre ="";
+      this.apellido ="";
     }
 
   ngOnInit(): void {
@@ -26,6 +26,11 @@ export class PaginaComponent implements OnInit {
       this.nombre = params['nombre']
       this.apellido = params['apellido']
     });
+  }
+  redireccion(){
+    //alert("Metodo redireccion");
+    this._router.navigate(["/formulario"]);
+    //this._router.navigate(["/ruta","param1","param2"]);//pasando parametros
   }
 
 }
