@@ -1,9 +1,24 @@
 <h1 class="subheader">Página</h1>
-<div *ngIf="nombre && apellido">
+<!-- <div *ngIf="nombre && apellido">
     <h2>Hola soy {{nombre}} y</h2>
     <h2>mi apellido es {{apellido}}</h2>
 </div>
 <div *ngIf="!nombre || !apellido">
     <h2>No hay datos por URL para mostrar</h2>
-</div>
+</div> -->
+
+<!-- Igual ngIf, pero con else condicionado con ngTemplate -->
+<!-- <div *ngIf="nombre && apellido; else variableTagMostrar">
+    <h2>Hola soy {{nombre}} y</h2>
+    <h2>mi apellido es {{apellido}}</h2>
+</div> -->
+<div *ngIf="nombre && apellido; then cumpleTagMostrar else variableTagMostrar"></div>
+<ng-template #cumpleTagMostrar>
+    <h2>Hola soy {{nombre}} y</h2>
+    <h2>mi apellido es {{apellido}}</h2>
+</ng-template>
+<ng-template #variableTagMostrar>
+    <h2>No hay datos por URL para mostrar</h2>
+</ng-template>
+
  <button (click)="redireccion()">Llevame al formulario</button>
