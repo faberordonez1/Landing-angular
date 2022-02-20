@@ -1,0 +1,35 @@
+<article class="article_item">
+    <div class="article_imageWrap">
+      <img src="{{ pelicula.image }}" alt="{{ pelicula.title }}" srcset="" />
+    </div>
+    <div class="article_item_description">
+      <h2>{{ i + 1 }}.{{ pelicula.title }}</h2>
+      <span class="article_date"> Hace 5 minutos </span><br />
+      <!-- ESTILOS Y CLASES
+              
+          ESTILOS -->
+      <!-- Estilo condicionado -->
+      <span class="year-style" [style.color]="pelicula.year < 2016 ? 'green' : 'red'">
+        {{ pelicula.year }} |
+      </span>
+      <!-- <span class="year-style"    [ngStyle]="{'color':'green','backgound-color':'red'}"
+                                      [ngStyle]="{'color':pelicula.year>2016?'green':'red'}" >
+              {{pelicula.year}}
+          </span> -->
+
+      <!-- CLASES -->
+      <!-- Clase condicionada -->
+      <!-- <span class="year" [class.year-green]="pelicula.year<2016"
+                            [class.year-red]="pelicula.year>2016">
+              {{pelicula.year}}
+          </span> -->
+      <!-- directiva ngClass -->
+      <span class="year" [ngClass]="{
+          'year-green': pelicula.year > 2016,
+          'year-red': pelicula.year < 2016
+        }">
+        {{ pelicula.year }}
+      </span>
+      <a href="#">Ver Mas...</a>
+    </div>
+  </article>

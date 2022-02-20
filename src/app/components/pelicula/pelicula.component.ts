@@ -10,10 +10,10 @@ export class PeliculaComponent implements OnInit {
 
 
   public titulo: string;
-  public peliculas:Array<any>
+  public peliculas:Pelicula[];
 
   constructor() { 
-    this.titulo = "Componente pelicula"
+    this.titulo = "Listado de peliculas"
     this.peliculas=[
       //{year:2019,title:"Spider Man 4",imagen:"https://i2.wp.com/codigoespagueti.com/wp-content/uploads/2021/10/Spider-Man-4-Fanat.jpg?fit=1280%2C720&quality=80&ssl=1"},
       new Pelicula(2019,"Spider Man 4","https://i2.wp.com/codigoespagueti.com/wp-content/uploads/2021/10/Spider-Man-4-Fanat.jpg?fit=1280%2C720&quality=80&ssl=1" ),
