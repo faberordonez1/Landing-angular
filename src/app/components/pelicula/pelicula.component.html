@@ -1,52 +1,67 @@
-<h1 class="subheader">Peliculas</h1>
-<hr>
-<h2>{{titulo}}</h2>
+<app-slider [nombre]="'Peliculas'" [size]="'small'"></app-slider>
+<div class="hero">
+  <div class="container">
+    <section class="hero_articulos">
+      <h1 class="subheader">Peliculas</h1>
+      <hr />
+      <h2>{{ titulo }}</h2>
 
-<section class="hero_articulos" *ngIf="peliculas">
-    <!-- Listado articulos -->
-        <article class="article_item" *ngFor="let pelicula of peliculas; let i = index;">
-            <div class="article_imageWrap">
-                <img src="{{pelicula.image}}" alt="{{pelicula.title}}" srcset="">
-            </div>
-            <div class="article_item_description">
-                <h2>{{i+1}}.{{pelicula.title}}</h2>
-                <span class="article_date">
-                    Hace 5 minutos
-                </span><br>
-                <!-- ESTILOS Y CLASES
+      <section class="hero_articulos" *ngIf="peliculas">
+        <!-- Listado articulos -->
+        <article
+          class="article_item"
+          *ngFor="let pelicula of peliculas; let i = index"
+        >
+          <div class="article_imageWrap">
+            <img
+              src="{{ pelicula.image }}"
+              alt="{{ pelicula.title }}"
+              srcset=""
+            />
+          </div>
+          <div class="article_item_description">
+            <h2>{{ i + 1 }}.{{ pelicula.title }}</h2>
+            <span class="article_date"> Hace 5 minutos </span><br />
+            <!-- ESTILOS Y CLASES
                     
                 ESTILOS -->
-                <!-- Estilo condicionado -->
-                <span class="year-style" [style.color]="pelicula.year<2016?'green':'red'">
-                    {{pelicula.year}} |
-                </span>
-                <!-- <span class="year-style"    [ngStyle]="{'color':'green','backgound-color':'red'}"
+            <!-- Estilo condicionado -->
+            <span
+              class="year-style"
+              [style.color]="pelicula.year < 2016 ? 'green' : 'red'"
+            >
+              {{ pelicula.year }} |
+            </span>
+            <!-- <span class="year-style"    [ngStyle]="{'color':'green','backgound-color':'red'}"
                                             [ngStyle]="{'color':pelicula.year>2016?'green':'red'}" >
                     {{pelicula.year}}
                 </span> -->
 
-                <!-- CLASES -->
-                <!-- Clase condicionada -->
-                <!-- <span class="year" [class.year-green]="pelicula.year<2016"
+            <!-- CLASES -->
+            <!-- Clase condicionada -->
+            <!-- <span class="year" [class.year-green]="pelicula.year<2016"
                                   [class.year-red]="pelicula.year>2016">
                     {{pelicula.year}}
                 </span> -->
-                <!-- directiva ngClass -->
-                <span class="year" [ngClass]="{'year-green':pelicula.year>2016,
-                                                'year-red':pelicula.year<2016}">
-                    {{pelicula.year}}
-                </span> 
-                <a href="#">Ver Mas...</a>
-            </div>
+            <!-- directiva ngClass -->
+            <span
+              class="year"
+              [ngClass]="{
+                'year-green': pelicula.year > 2016,
+                'year-red': pelicula.year < 2016
+              }"
+            >
+              {{ pelicula.year }}
+            </span>
+            <a href="#">Ver Mas...</a>
+          </div>
         </article>
+      </section>
 
-                <script>
-                    const mifunc = ()=>{
-                        console.log();
-                    }
-                </script>
-</section>
-
-<div *ngIf= "peliculas.length <= 3">
-    <p>Hay pocas peliculas, solo tenemos {{peliculas.length}}</p>
+      <div *ngIf="peliculas.length <= 3">
+        <p>Hay pocas peliculas, solo tenemos {{ peliculas.length }}</p>
+      </div>
+    </section>
+    <app-sidebar></app-sidebar>
+  </div>
 </div>

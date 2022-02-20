@@ -1,6 +1,8 @@
-<div class="slider">
+<div class="slider" [ngClass]="{'slider-big':!size || size=='big',
+                                'slider-small':size == 'small'}">
     <div class="container">
-        <h1>Bienvenidos a landing de Angular un framework de Javascript</h1>
-        <a href="article.html" class="btn_slider btn">Ir al blog</a>
+        <h1>{{nombre}}</h1>
+        <a *ngIf="!size || size=='big'" [routerLink]="['/blog']" class="btn_slider btn">Ir al blog</a>
     </div>
 </div>
+

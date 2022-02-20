@@ -1,1 +1,27 @@
-<h2 class="subheader">{{title}}</h2>
+<app-slider
+  [nombre]="'Bienvenidos a landing de Angular un framework de Javascript'"
+></app-slider>
+<div class="hero">
+  <div class="container">
+    <section class="hero_articulos">
+      <h2 class="subheader">{{ title }}</h2>
+                  <!-- Listado articulos -->
+            <!-- 
+                <h2 class="subheader">Ultimos articulos</h2>
+                <article class="article_item">
+                    <div class="article_imageWrap">
+                        <img src="https://loremflickr.com/1000/600/" alt="" srcset="">
+                    </div>
+                    <div class="article_item_description">
+                        <h2>Articulo Lorem Ipsum</h2>
+                        <span class="article_date">
+                            Hace 5 minutos
+                        </span>
+                        <a href="#">Ver Mas...</a>
+                    </div>
+                </article>-->
+    </section>
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+  </div>
+</div>
