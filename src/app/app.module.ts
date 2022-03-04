@@ -14,7 +14,12 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { PaginaComponent } from './components/pagina/pagina.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { ErrorComponent } from './components/error/error.component';
+import { PruebaComponent } from './components/prueba/prueba.component';
 import { PeliculaDetalleComponent } from './components/pelicula/pelicula-detalle/pelicula-detalle.component';
+import {MenuItem} from 'primeng/api';    
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {InputNumberModule} from 'primeng/inputnumber';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,11 +34,16 @@ import { PeliculaDetalleComponent } from './components/pelicula/pelicula-detalle
     PaginaComponent,
     PeliculaComponent,
     ErrorComponent,
-    PeliculaDetalleComponent
+    PeliculaDetalleComponent,
+    PruebaComponent,
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    BrowserModule,
+    BrowserAnimationsModule,
+    InputNumberModule,
+    FormsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

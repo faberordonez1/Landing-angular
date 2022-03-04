@@ -1,9 +1,40 @@
 <app-slider [nombre]="'Formulario'" [size]="'small'"></app-slider>
 <div class="hero">
-  <div class="container">
-    <section class="hero_articulos">
-        <h1 class="subheader">Formulario</h1>
-    </section>
-    <app-sidebar></app-sidebar>
-  </div>
+	<div class="container">
+		<section class="hero_articulos">
+			<h1 class="subheader">Formulario</h1>
+
+			<div id="datos-en-tiempoReal" *ngIf="user.nombre">
+				<h2 class="subheader">Datos timepo real</h2>
+				<ul>
+					<li>{{ user.nombre }}</li>
+					<li>{{ user.apellidos }}</li>
+					<li>{{ user.bio }}</li>
+					<li>{{ user.genero }}</li>
+				</ul>
+			</div>
+
+			<form class="formulario" #ngForm="ngForm" (ngSubmit)="onSubmit()">
+				<div class="form-group">
+					<label for="nombre">Nombre</label>
+					<input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" />
+				</div>
+				<div class="form-group">
+					<label for="apellido">Apellidos</label>
+					<input type="text" name="apellidos" #apellido="ngModel" [(ngModel)]="user.apellidos" />
+				</div>
+				<div class="form-group">
+					<label for="bio">Biografia</label>
+					<textarea name="bio" #bio="ngModel" [(ngModel)]="user.bio"></textarea>
+				</div>
+				<div class="form-group radiobuttons">
+					<input type="radio" name="genero" value="hombre" [(ngModel)]="user.genero" />Hombre
+					<input type="radio" name="genero" value="mujer" [(ngModel)]="user.genero" />Mujer
+					<input type="radio" name="genero" value="otro" [(ngModel)]="user.genero" />Otro
+				</div>
+				<input class="sidebar_btn_create btn" type="submit" value="Enviar" />
+			</form>
+		</section>
+		<app-sidebar></app-sidebar>
+	</div>
 </div>
