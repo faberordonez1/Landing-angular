@@ -7,20 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 	public user: any;
+	public campoevento:any;
+	public campoevento2:any;
 
 	constructor() {
-        /**Campos capturados del form */
-		this.user = {
+		this.user = {/**Campos capturados del form */
 			nombre: '',
 			apellidos: '',
 			bio: '',
-			gen: '',
+			genero: '',
 		};
 	}
 
 	ngOnInit(): void {}
 	onSubmit() {
-        console.log(this.user)
-        console.log(this.user.nombre)
+        console.log('Formulario enviado' + this.user)
+	}
+	hazDadoClick(){
+		console.log('Haz Hecho click 😉');
+		alert('Haz Hecho click 😉');
+		
+	}
+	hazSalido(){
+		console.log('Haz salido del Input 😎');
+		alert('Haz salido del Input 😎');
+	}
+	hazPulsado($event:any){
+		console.log('Haz pulsado la tecla', $event.key)
 	}
 }
