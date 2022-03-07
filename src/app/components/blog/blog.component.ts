@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _articleSvc:ArticleService) { }
 
   ngOnInit(): void {
+    //alert(this._articleSvc.saludo())
   }
-
 }

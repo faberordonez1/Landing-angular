@@ -1,5 +1,5 @@
-export class Pelicula{
-    /*
+export class Pelicula {
+  /*
     public title:string;
     public year:number;
     public image:string;
@@ -11,7 +11,9 @@ export class Pelicula{
 
     }*/
 
-    constructor ( public year:number,public title:string,public image:string){
-    }
-
+  constructor(/**Forma resumida */
+    public year: number,
+    public title: string,
+    public image: string
+  ) {}
 }
